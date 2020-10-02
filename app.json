@@ -1,0 +1,7 @@
+{
+  "name": "External Service App",
+  "description": "Sample app registered as an External Service for Flow",
+  "repository": "https://github.com/chrism/flowapp",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "static"]
+}
