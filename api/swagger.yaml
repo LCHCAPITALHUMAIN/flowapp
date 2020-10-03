@@ -5,7 +5,7 @@ info:
     \ For exclusive use of <b style= \"font-family: Arial;font-size: 24px;color:#4278d2;\"\
     >Hero</b> Sales Engineers.</br>\n<img src=\"https://raw.githubusercontent.com/sankeths/Swagger/master/awesomeShoppingStore.PNG\"\
     \ alt=\"ShoppingCart\">\n"
-  version: "1.0.0"
+  version: "1.1.0"
   title: "Awesome Shopping Store v1"
   termsOfService: "http://smartbear.com"
   contact:
@@ -13,7 +13,7 @@ info:
   license:
     name: "Private License"
     url: "http://smartbear.com"
-host: "swagger-shop.herokuapp.com"
+host: "localhost"
 basePath: "/shoppingcart"
 tags:
 - name: "Internal calls"
@@ -168,6 +168,38 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/inline_response_200_4"
+      security:
+      - basic: []
+      x-swagger-router-controller: "InternalCalls"
+  /{type}/get_inventory/:
+    get:
+      tags:
+      - "Internal calls"
+      description: "Get Inventory"
+      operationId: "typeGet_inventoryGET"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - name: "type"
+        in: "path"
+        description: "json or xml"
+        required: true
+        type: "string"
+      - name: "product_id"
+        in: "query"
+        description: "Product Id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Inventory"
       security:
       - basic: []
       x-swagger-router-controller: "InternalCalls"
@@ -478,6 +510,15 @@ definitions:
       cc_name: "S S"
       cc_number: 9234123412341234
       cc_exp_yr: 2018
+  Inventory:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        example: 33
+        description: "Qty in Stock"
+    example:
+      id: 33
 parameters:
   pathParam:
     name: "type"

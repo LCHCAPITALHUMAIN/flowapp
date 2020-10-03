@@ -3,6 +3,18 @@
 var utils = require('../utils/writer.js');
 var InternalCalls = require('../service/InternalCallsService');
 
+module.exports.typeGet_inventoryGET = function typeGet_inventoryGET (req, res, next) {
+  var type = req.swagger.params['type'].value;
+  var product_id = req.swagger.params['product_id'].value;
+  InternalCalls.typeGet_inventoryGET(type,product_id)
+    .then(function (response) {
+      utils.writeJson(res, response);
+    })
+    .catch(function (response) {
+      utils.writeJson(res, response);
+    });
+};
+
 module.exports.typeGet_loginGET = function typeGet_loginGET (req, res, next) {
   var type = req.swagger.params['type'].value;
   InternalCalls.typeGet_loginGET(type)

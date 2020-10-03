@@ -1,11 +1,11 @@
 {
   "name": "awesome-shopping-store-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A uber supercool demo site that takes care of your uber cool demo.</br> For exclusive use of <b style= \"font-family: Arial;font-size: 24px;color:#4278d2;\">Hero</b> Sales Engineers.</br> <img src=\"https://raw.githubusercontent.com/sankeths/Swagger/master/awesomeShoppingStore.PNG\" alt=\"ShoppingCart\"> ",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install",
-    "start": "node index.js"
+	"prestart": "npm install",
+	"start": "node index.js"
   },
   "keywords": [
     "swagger"
