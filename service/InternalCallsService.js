@@ -1,5 +1,35 @@
 'use strict';
 
+var SFAuthService = require('../service/SFAuthService');
+
+/**
+ * Get Inventory
+ *
+ * type String json or xml
+ * product_id Integer Product Id
+ * returns List
+ **/
+exports.typeGet_inventoryGET = function (type, product_id) {
+    return new Promise(function (resolve, reject) {
+        SFAuthService.getSalesforceConnection()
+            .then((conn) => {
+                conn.sobject("Product2").update({ 
+                    Id : product_id,
+                    Qty_In_Stock__c : Math.floor(Math.random() * 100)
+                }, function(err, ret) {
+                    if (err || !ret.success) { 
+                        console.log(err);
+                        resolve({id: product_id , success: false });
+                    }
+                    resolve({id: product_id , success: true });
+                  });
+            }).catch((err) => {
+                console.log(err);
+                resolve({id: product_id , success: false });
+            });
+    });
+};
+
 /**
  * Login to user account
  *

@@ -6,8 +6,8 @@ info:
         \ For exclusive use of <b style= \"font-family: Arial;font-size: 24px;color:#4278d2;\"\
         >Hero</b> Sales Engineers.</br>\n<img src=\"https://raw.githubusercontent.com/sankeths/Swagger/master/awesomeShoppingStore.PNG\"\
         \ alt=\"ShoppingCart\">\n"
-    version: '1.0.0'
-    title: 'Awesome Shopping Store v1'
+    version: '1.1.0'
+    title: 'Awesome Shopping Store v2'
     termsOfService: 'http://smartbear.com'
     contact:
         email: 'sanketh.shanbhag@smartbear.com'
@@ -169,6 +169,38 @@ paths:
                         type: 'array'
                         items:
                             $ref: '#/definitions/inline_response_200_4'
+            security:
+                - basic: []
+            x-swagger-router-controller: 'InternalCalls'
+    /{type}/get_inventory/:
+        get:
+            tags:
+                - 'Internal calls'
+            description: 'Get Inventory'
+            operationId: 'typeGet_inventoryGET'
+            consumes:
+                - 'application/json'
+            produces:
+                - 'application/json'
+                - 'application/xml'
+            parameters:
+                - name: 'type'
+                  in: 'path'
+                  description: 'json or xml'
+                  required: true
+                  type: 'string'
+                - name: 'product_id'
+                  in: 'query'
+                  description: 'Product Id'
+                  required: true
+                  type: 'string'
+            responses:
+                '200':
+                    description: 'OK'
+                    schema:
+                        type: 'object'
+                        items:
+                            $ref: '#/definitions/Inventory'
             security:
                 - basic: []
             x-swagger-router-controller: 'InternalCalls'
@@ -435,6 +467,20 @@ definitions:
             order_id: 1
             paymenttype: 'card'
             status: 0
+    Inventory:
+        type: 'object'
+        properties:
+            id:
+                type: 'string'
+                example: '1111111111'
+                description: 'Product Id'
+            success:
+                type: 'boolean'
+                example: false
+                description: 'Update Successful'
+        example:
+            id: '1111111111'
+            success: true
     POSTDATA_1:
         type: 'object'
         properties:
