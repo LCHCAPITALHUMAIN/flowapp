@@ -14,7 +14,7 @@ info:
     license:
         name: 'Private License'
         url: 'http://smartbear.com'
-host: 'swagger-shop.herokuapp.com'
+host: 'swagger-flow.herokuapp.com'
 basePath: '/shoppingcart'
 tags:
     - name: 'Internal calls'
