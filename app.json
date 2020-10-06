@@ -10,7 +10,7 @@
             "required": true
         },
         "SF_USERNAME": {
-            "description": "Username of the integration user who has been assigned the Planning Poker Player permission set",
+            "description": "Username of the integration user",
             "value": "",
             "required": true
         },

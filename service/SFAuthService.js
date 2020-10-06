@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const { SF_CONSUMER_KEY, SF_USERNAME, SF_LOGIN_URL } = process.env;
 
-let SF_PRIVATE_KEY = process.env.PRIVATE_KEY;
+let SF_PRIVATE_KEY = process.env.SF_PRIVATE_KEY;
 if (!SF_PRIVATE_KEY) {
     SF_PRIVATE_KEY = require('fs').readFileSync('private.pem').toString('utf8');
 }
