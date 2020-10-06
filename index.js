@@ -1,10 +1,23 @@
 'use strict';
 
 var fs = require('fs'),
-    path = require('path'),
-    http = require('http');
+  path = require('path'),
+  http = require('http'),
+  auth = require('basic-auth');
+
+require('dotenv').config();
+
+const { SF_CONSUMER_KEY, SF_USERNAME, SF_LOGIN_URL, BASIC_USERNAME, BASIC_PASSWORD } = process.env;
+
+if (!(SF_CONSUMER_KEY && SF_USERNAME && SF_LOGIN_URL && BASIC_USERNAME && BASIC_PASSWORD)) {
+  console.error(
+    'Cannot start app: missing mandatory configuration. Check your environment variables'
+  );
+  process.exit(-1);
+}
 
 var app = require('connect')();
+
 var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
 var serverPort = process.env.PORT || 80;
@@ -17,7 +30,7 @@ var options = {
 };
 
 // The Swagger document (require it, build it programmatically, fetch it from a URL, ...)
-var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
+var spec = fs.readFileSync(path.join(__dirname, 'api/swagger.yaml'), 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
 // Initialize the Swagger middleware
@@ -28,6 +41,17 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
   // Validate Swagger requests
   app.use(middleware.swaggerValidator());
+
+  app.use(middleware.swaggerSecurity({
+    basic: function (req, def, scopes, callback) {
+      let user = auth.parse(req.headers.authorization);
+      if (user.name === BASIC_USERNAME && user.pass === BASIC_PASSWORD) {
+        callback();
+      } else {
+        callback({ statusCode: 401 });
+      }
+    }
+  }));
 
   // Route validated requests to appropriate controller
   app.use(middleware.swaggerRouter(options));

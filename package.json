@@ -13,8 +13,12 @@
   "license": "Unlicense",
   "private": true,
   "dependencies": {
+    "basic-auth": "^2.0.1",
     "connect": "^3.2.0",
+    "dotenv": "^8.2.0",
     "js-yaml": "^3.3.0",
+    "jsforce": "^1.10.0",
+    "salesforce-jwt-bearer-token-flow": "^0.2.4",
     "swagger-tools": "0.10.1"
   }
 }
