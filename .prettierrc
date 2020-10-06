@@ -1,0 +1,10 @@
+{
+    "trailingComma": "none",
+    "singleQuote": true,
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": "**/*.html"
+        }
+    ]
+}

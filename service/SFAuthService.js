@@ -12,8 +12,8 @@ if (!SF_PRIVATE_KEY) {
     SF_PRIVATE_KEY = require('fs').readFileSync('private.pem').toString('utf8');
 }
 
-exports.getSalesforceConnection = function(){
-    return new Promise(function(resolve, reject) {
+exports.getSalesforceConnection = function () {
+    return new Promise(function (resolve, reject) {
         jwt.getToken(
             {
                 iss: SF_CONSUMER_KEY,
@@ -31,6 +31,7 @@ exports.getSalesforceConnection = function(){
                 } else {
                     reject('Authentication to Salesforce failed');
                 }
-        });
+            }
+        );
     });
-}
+};

@@ -1,40 +1,36 @@
 {
-  "name": "External Service App",
-  "description": "Sample app registered as an External Service for Flow",
-  "repository": "https://github.com/chrism/flowapp",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
-  "env": {
-    "SF_CONSUMER_KEY": {
-      "description": "Consumer Key of the Salesforce Connected App",
-      "value": "",
-      "required": true
+    "name": "External Service App",
+    "description": "Sample app registered as an External Service for Flow",
+    "repository": "https://github.com/chrism/flowapp",
+    "logo": "https://node-js-sample.herokuapp.com/node.png",
+    "env": {
+        "SF_CONSUMER_KEY": {
+            "description": "Consumer Key of the Salesforce Connected App",
+            "value": "",
+            "required": true
+        },
+        "SF_USERNAME": {
+            "description": "Username of the integration user who has been assigned the Planning Poker Player permission set",
+            "value": "",
+            "required": true
+        },
+        "SF_LOGIN_URL": {
+            "description": "Salesforce authentication domain",
+            "value": "",
+            "required": true
+        },
+        "SF_PRIVATE_KEY": {
+            "description": "Contents of the private.pem file corresponding to the certificate used in the Connected App",
+            "value": ""
+        },
+        "BASIC_USERNAME": {
+            "description": "Username for Basic Auth to the Swagger APIs",
+            "value": ""
+        },
+        "BASIC_PASSWORD": {
+            "description": "Password for Basic Auth to the Swagger APIs",
+            "value": ""
+        }
     },
-    "SF_USERNAME": {
-      "description": "Username of the integration user who has been assigned the Planning Poker Player permission set",
-      "value": "",
-      "required": true
-    },
-    "SF_LOGIN_URL": {
-      "description": "Salesforce authentication domain",
-      "value": "",
-      "required": true
-    },
-    "SF_PRIVATE_KEY": {
-      "description": "Contents of the private.pem file corresponding to the certificate used in the Connected App",
-      "value": ""
-    },
-    "BASIC_USERNAME": {
-      "description": "Username for Basic Auth to the Swagger APIs",
-      "value": ""
-    },
-    "BASIC_PASSWORD": {
-      "description": "Password for Basic Auth to the Swagger APIs",
-      "value": ""
-    }
-  },
-  "keywords": [
-    "node",
-    "express",
-    "static"
-  ]
+    "keywords": ["node", "express", "static"]
 }

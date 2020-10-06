@@ -1,24 +1,28 @@
 {
-  "name": "awesome-shopping-store-v1",
-  "version": "1.0.0",
-  "description": "A uber supercool demo site that takes care of your uber cool demo.</br> For exclusive use of <b style= \"font-family: Arial;font-size: 24px;color:#4278d2;\">Hero</b> Sales Engineers.</br> <img src=\"https://raw.githubusercontent.com/sankeths/Swagger/master/awesomeShoppingStore.PNG\" alt=\"ShoppingCart\"> ",
-  "main": "index.js",
-  "scripts": {
-    "prestart": "npm install",
-    "start": "node index.js"
-  },
-  "keywords": [
-    "swagger"
-  ],
-  "license": "Unlicense",
-  "private": true,
-  "dependencies": {
-    "basic-auth": "^2.0.1",
-    "connect": "^3.2.0",
-    "dotenv": "^8.2.0",
-    "js-yaml": "^3.3.0",
-    "jsforce": "^1.10.0",
-    "salesforce-jwt-bearer-token-flow": "^0.2.4",
-    "swagger-tools": "0.10.1"
-  }
+    "name": "awesome-shopping-store-v1",
+    "version": "1.0.0",
+    "description": "A uber supercool demo site that takes care of your uber cool demo.</br> For exclusive use of <b style= \"font-family: Arial;font-size: 24px;color:#4278d2;\">Hero</b> Sales Engineers.</br> <img src=\"https://raw.githubusercontent.com/sankeths/Swagger/master/awesomeShoppingStore.PNG\" alt=\"ShoppingCart\"> ",
+    "main": "index.js",
+    "scripts": {
+        "prestart": "npm install",
+        "start": "node index.js",
+        "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\""
+    },
+    "keywords": [
+        "swagger"
+    ],
+    "license": "Unlicense",
+    "private": true,
+    "dependencies": {
+        "basic-auth": "^2.0.1",
+        "connect": "^3.2.0",
+        "dotenv": "^8.2.0",
+        "js-yaml": "^3.3.0",
+        "jsforce": "^1.10.0",
+        "salesforce-jwt-bearer-token-flow": "^0.2.4",
+        "swagger-tools": "0.10.1"
+    },
+    "devDependencies": {
+        "prettier": "^2.1.2"
+    }
 }
