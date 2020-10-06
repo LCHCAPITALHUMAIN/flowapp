@@ -136,7 +136,7 @@ exports.typeGet_productsGET = function (type) {
                 description: 'This is an rare iphone',
                 modified: '2018-05-05 00:00:00',
                 id: 1,
-                status: '1 or 0'
+                status: 0
             },
             {
                 image: 'iphone.jpg',
@@ -146,7 +146,7 @@ exports.typeGet_productsGET = function (type) {
                 description: 'This is an rare iphone',
                 modified: '2018-05-05 00:00:00',
                 id: 1,
-                status: '1 or 0'
+                status: 0
             }
         ];
         if (Object.keys(examples).length > 0) {
