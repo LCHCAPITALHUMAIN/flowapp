@@ -2,16 +2,6 @@
 
 var utils = require('../utils/writer.js');
 var InternalCalls = require('../service/InternalCallsService');
-var SFAuthService = require('../service/SFAuthService');
-
-/*
-SFAuthService.getSalesforceConnection()
-    .then((conn) => {
-      console.log(conn);
-    }).catch((err) => {
-      console.log(err);
-    });
-*/
 
 module.exports.typeGet_loginGET = function typeGet_loginGET(req, res, next) {
     var type = req.swagger.params['type'].value;
