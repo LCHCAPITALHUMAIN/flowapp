@@ -130,22 +130,22 @@ exports.typeGet_productsGET = function (type) {
         examples['application/json'] = [
             {
                 image: 'iphone.jpg',
-                price: 999.0,
+                price: 1099.0,
                 created: '2018-05-05 00:00:00',
                 name: 'iPhone',
-                description: 'This is an rare iphone',
+                description: 'This is a rare iphone',
                 modified: '2018-05-05 00:00:00',
                 id: 1,
                 status: 0
             },
             {
-                image: 'iphone.jpg',
-                price: 999.0,
+                image: 'ipad.jpg',
+                price: 799.0,
                 created: '2018-05-05 00:00:00',
-                name: 'iPhone',
-                description: 'This is an rare iphone',
+                name: 'iPad',
+                description: 'This is a rare iPad',
                 modified: '2018-05-05 00:00:00',
-                id: 1,
+                id: 2,
                 status: 0
             }
         ];
